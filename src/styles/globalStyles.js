@@ -7,7 +7,6 @@ export const Layout = styled.div`
     justify-content:flex-start;
     flex-direction:column;
     display:flex;
-    height:100vh;
     background:#24BD64;
 `
 
@@ -17,7 +16,6 @@ export const Container = styled.div`
     justify-content:center;
     flex-direction: column;
     display:flex;
-    padding:20px;
 `
 
 export const Header = styled.div`
@@ -26,7 +24,6 @@ export const Header = styled.div`
     justify-content:center;
     display:flex-inline;
     display:inline-flex;
-    padding:20px;
     margin:20px;
 `
 
@@ -60,10 +57,16 @@ export const Input = styled.input.attrs(props => ({
     type: 'text'
 }))`
     border: 0px;
-    border-bottom: 1px solid black;
-    margin: 0 0 1em;
+    border-bottom: 0.5px solid #4F4F4F;
     background:transparent;
     decoration:none;
     outline:none;
-    min-width:300px;
+    min-width:260px;
+    font-weight:bold;
+    color:#303030;
+    ::placeholder{
+        color:#606060;
+    }
+    margin:10px;
+    padding:2px;
 `

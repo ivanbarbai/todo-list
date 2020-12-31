@@ -18,7 +18,7 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
     }
     return (
         <form>
-            <Input value={inputText} onChange={inputTextHandler} className="todo-input" />
+            <Input placeholder="What are you going to write today?" value={inputText} onChange={inputTextHandler} className="todo-input" />
             <PlusButton onClick={submitTodoHandler} className="todo-button" type="submit">
                 <FontAwesomeIcon icon={faPlus} color="white" />
             </PlusButton>
