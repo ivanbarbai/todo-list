@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button, PlusButton, Input } from '../styles/globalStyles'
+import { PlusButton, Input } from '../styles/globalStyles'
 import { Select, SelectSection } from '../styles/formStyles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faSortDown } from '@fortawesome/free-solid-svg-icons'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
     const inputTextHandler = (e) => {
