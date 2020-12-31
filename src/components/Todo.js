@@ -1,6 +1,10 @@
 import React from 'react'
+import { TodoItem, TodoContainer, TodoButtons } from '../styles/formStyles'
+import { CheckButton, TrashButton } from '../styles/globalStyles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck, faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const Todo = ({text, todo, todos, setTodos}) => {
+const Todo = ({ text, todo, todos, setTodos }) => {
 
     //Events
     const deleteHandler = () => {
@@ -9,8 +13,8 @@ const Todo = ({text, todo, todos, setTodos}) => {
 
     const completeHandler = () => {
         setTodos(todos.map((item) => {
-            if(item.id === todo.id){
-                return{
+            if (item.id === todo.id) {
+                return {
                     ...item, completed: !item.completed
                 }
             }
@@ -19,11 +23,20 @@ const Todo = ({text, todo, todos, setTodos}) => {
     }
 
     return (
-        <div className="todo">
-            <li className={`todo-item ${todo.completed ? "completed" : ""}`}>{text}</li>
-            <button onClick={completeHandler} className="complete-btn" ><i className="fas fa-check"></i></button>
-            <button onClick={deleteHandler} className="trash-btn"><i className="fas fa-trash"></i></button>
-        </div>
+        <TodoContainer>
+            <TodoItem>
+                <li className={`todo-item ${todo.completed ? "completed" : ""}`}>{text}</li>
+            </TodoItem>
+            <TodoButtons>
+                <CheckButton onClick={completeHandler} className="complete-btn" >
+                    <FontAwesomeIcon icon={faCheck} color="white" />
+                </CheckButton>
+                <TrashButton onClick={deleteHandler} className="trash-btn">
+                    <FontAwesomeIcon icon={faTrash} color="white" />
+                </TrashButton>
+            </TodoButtons>
+        </TodoContainer>
+
     )
 }
 

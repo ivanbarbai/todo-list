@@ -1,4 +1,8 @@
 import React from 'react'
+import { Button, PlusButton, Input } from '../styles/globalStyles'
+import { Select, SelectSection } from '../styles/formStyles'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faSortDown } from '@fortawesome/free-solid-svg-icons'
 
 const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
     const inputTextHandler = (e) => {
@@ -13,21 +17,20 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
         setStatus(e.target.value);
     }
     return (
-        <div>
-            <form action="">
-                <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
-                <button onClick={submitTodoHandler} className="todo-button" type="submit">
-                    <i className="fas fa-plus-square"></i>
-                </button>
-                <div className="select">
-                    <select onChange={statusHandler} name="todos" className="filter-todo" id="">
-                        <option value="all">All</option>
-                        <option value="completed">Completed</option>
-                        <option value="uncompleted">Uncompleted</option>
-                    </select>
-                </div>
-            </form>
-        </div>
+        <form>
+            <Input value={inputText} onChange={inputTextHandler} className="todo-input" />
+            <PlusButton onClick={submitTodoHandler} className="todo-button" type="submit">
+                <FontAwesomeIcon icon={faPlus} color="white" />
+            </PlusButton>
+            <SelectSection>
+                <Select onChange={statusHandler} name="todos" className="filter-todo" id="">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="uncompleted">Uncompleted</option>
+                </Select>
+            </SelectSection>
+
+        </form>
     )
 }
 
