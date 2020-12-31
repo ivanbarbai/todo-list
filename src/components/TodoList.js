@@ -1,11 +1,12 @@
 import React from 'react'
-
+import { TodoContainer } from '../styles/formStyles'
+import '../App.css'
 //components
 import Todo from './Todo'
 
 const TodoList = ({ setTodos, todos, filteredTodos }) => {
     return (
-        <div className="todo-container">
+        
             <ul className="todo-list">
                 {filteredTodos.map((todo) => (
                     <Todo
@@ -17,7 +18,6 @@ const TodoList = ({ setTodos, todos, filteredTodos }) => {
                     />
                 ))}
             </ul>
-        </div>
     )
 }
 

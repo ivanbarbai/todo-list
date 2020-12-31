@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { Layout, Container, Header } from './styles/globalStyles'
+import { WriteSection, FormSection, TodoSection } from './styles/formStyles'
 import './App.css';
 
 //Components
@@ -56,18 +58,33 @@ function App() {
 
   return (
     <div className="App">
-      <header><h1>Berrbe Todo List {inputText}</h1></header>
-      <Form
-        inputText={inputText}
-        todos={todos}
-        setTodos={setTodos}
-        setInputText={setInputText}
-        setStatus={setStatus}
-      />
-      <TodoList
-        setTodos={setTodos}
-        filteredTodos={filteredTodos}
-        todos={todos} />
+      <Layout>
+        <Header>
+          <h1>easynote</h1>
+        </Header>
+        <Container>
+          <WriteSection>
+            <h1>{inputText}</h1>
+          </WriteSection>
+        </Container>
+        <Container>
+          <FormSection>
+            <Form
+              inputText={inputText}
+              todos={todos}
+              setTodos={setTodos}
+              setInputText={setInputText}
+              setStatus={setStatus}
+            />
+          </FormSection>
+          <TodoSection>
+            <TodoList
+              setTodos={setTodos}
+              filteredTodos={filteredTodos}
+              todos={todos} />
+          </TodoSection>
+        </Container>
+      </Layout>
     </div>
   );
 }
