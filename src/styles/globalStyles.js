@@ -24,7 +24,8 @@ export const Header = styled.div`
     justify-content:center;
     display:flex-inline;
     display:inline-flex;
-    margin:20px;
+    margin-top:20px;
+    margin-bottom:20px;
 `
 
 // styled components

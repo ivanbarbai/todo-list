@@ -23,7 +23,7 @@ const Todo = ({ text, todo, todos, setTodos }) => {
     }
 
     return (
-        <TodoContainer>
+        <TodoContainer animate={{ y: 5}} drag="y" dragConstraints={{top:0, bottom:0}} transition={{duration: 0.3}}>
             <TodoItem>
                 <li className={`todo-item ${todo.completed ? "completed" : ""}`}>{text}</li>
             </TodoItem>
