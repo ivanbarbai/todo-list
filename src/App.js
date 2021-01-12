@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Layout, Container, Header } from './styles/globalStyles'
 import { WriteSection, FormSection, TodoSection } from './styles/formStyles'
-import {motion} from 'framer-motion'
 import './App.css';
 
 //Components
