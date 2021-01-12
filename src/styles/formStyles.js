@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 //General Sections 
@@ -5,13 +6,15 @@ export const WriteSection = styled.div`
     justify-content:center;
     align-items:center;
     align-content:center;
-    padding:20px;
+    padding-top:20px;
+    padding-bottom:20px;
     min-height:100px;
 `
 export const FormSection = styled.div`
     min-width:320px;
     background:rgba(250,250,250,0.8);
-    margin:10px;
+    margin-left:10px;
+    margin-right:10px;
     padding:30px;
     border-radius:8px;
     display:flex-inline;
@@ -51,12 +54,14 @@ export const TodoItem = styled.div`
     margin: 10px 0px 10px 0px;
     border-radius: 4px;
     padding: 10px 5px 10px 5px;
+    mind-width:300px;
+    max-width:300px;
 `
 
 export const TodoButtons = styled.div`
 `
 
-export const TodoContainer = styled.div`
+export const TodoContainer = styled(motion.div)`
     background:rgba(255,255,255,0.6);
     display:flex;
     justify-content:space-between;
@@ -68,4 +73,6 @@ export const TodoContainer = styled.div`
     font-weight:bold;
     font-size:12px;
     color:#156B39;
+    margin-top:10px;
+    margin-bottom:10px;
 `
